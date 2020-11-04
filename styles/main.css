@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;900&display=swap');
+
+/* CSS VARIABLES EXAMPLE */
+:root {
+    --primary--color: teal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    padding: 1em;
+}
+
+nav {
+    padding: .5em;
+    background-color: var(--primary--color);
+    color: white;
+    font-size: 3em;
+    font-family: 'Righteous', cursive;
+}
+
+select,
+button {
+    background-color: var(--primary--color);
+    color: white;
+    padding: .3em .5em;
+    border: none;
+    border-radius: .5em;
+    font-size: 1em;
+}
+
+
+/* SNEAKER CARD STYLES */
+.sneaker--card {
+    display: grid;
+    grid-template-columns: 100px 30% auto 110px;
+    border: 1px solid white;
+    column-gap: 1em;
+    padding: 1em;
+    margin: 1em 0;
+    background-color: white;
+    transition: all .2s;
+    transition-timing-function: ease-in-out;
+}
+
+.sneaker--card>div {
+    align-self: center;
+}
+
+.sneaker--card:hover {
+    transform: translate(0, -2px);
+    border: 1px solid var(--primary--color);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.sneaker--thumb {
+    width: 100px;
+}
+
+.sneaker--shoe {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.sneaker--price {
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--primary--color)
+}
+
+
+/* MODAL STYLING */
+
+.modal--parent {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.521);
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.modal--content {
+    background-color: white;
+    width: 80%;
+    max-width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 1em;
+    box-shadow: 0px 0px 10px 0px black;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.image--wrapper {
+    width: 100%;
+}
+
+.image--wrapper>img {
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
