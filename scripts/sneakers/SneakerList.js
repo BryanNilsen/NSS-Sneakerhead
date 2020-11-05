@@ -46,18 +46,7 @@ eventHub.addEventListener("sneakersSorted", event => {
 })
 
 
-// EVENT LISTENER FOR THUMBNAIL IMAGE CLICK EVENT AND DISPATCH "thumbnailClicked" CUSTOM EVENT
-// >> MODAL COMPONENT WILL LISTEN
-eventHub.addEventListener("click", (event) => {
-    if(event.target.classList.contains("sneaker--thumb")) {
-        const thumbnailClickedEvent = new CustomEvent("thumbnailClicked", {
-            detail: {
-                imgUrl: event.target.src
-            }
-        })
-        eventHub.dispatchEvent(thumbnailClickedEvent)
-    }
-})
+
 
 
 // SORTING ALPHABETICALLY EXAMPLE

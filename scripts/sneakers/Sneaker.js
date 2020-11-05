@@ -4,6 +4,8 @@
     sneaker object into an HTML Representation
 */
 
+const eventHub = document.querySelector(".main__container")
+
 export const SneakerHTML = (sneakerObj) => {
     return `
     <div class="sneaker--card">
@@ -14,3 +16,17 @@ export const SneakerHTML = (sneakerObj) => {
     </div>
     `
 }
+
+
+// EVENT LISTENER FOR THUMBNAIL IMAGE CLICK EVENT AND DISPATCH "thumbnailClicked" CUSTOM EVENT
+// >> MODAL COMPONENT WILL LISTEN
+eventHub.addEventListener("click", (event) => {
+    if(event.target.classList.contains("sneaker--thumb")) {
+        const thumbnailClickedEvent = new CustomEvent("thumbnailClicked", {
+            detail: {
+                imgUrl: event.target.src
+            }
+        })
+        eventHub.dispatchEvent(thumbnailClickedEvent)
+    }
+})

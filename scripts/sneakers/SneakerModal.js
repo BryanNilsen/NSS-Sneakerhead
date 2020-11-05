@@ -36,3 +36,6 @@ eventHub.addEventListener("click", (event) => {
         closeSneakerModal()
     }
 })
+
+
+// HOW WOULD YOU REFACTOR THIS CODE TO DISPLAY MORE DETAIL INFORMATION IN THE MODAL; e.g., the releaseDate and colorway properties??

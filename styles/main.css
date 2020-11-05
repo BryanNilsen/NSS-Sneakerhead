@@ -9,7 +9,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: whitesmoke;
+    background-color: #dadada;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -35,12 +35,18 @@ button {
     font-size: 1em;
 }
 
+.results__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 /* SNEAKER CARD STYLES */
 .sneaker--card {
+    opacity: .7;
     display: grid;
     grid-template-columns: 100px 30% auto 110px;
-    border: 1px solid white;
+    border: 1px solid rgb(104, 104, 104);
     column-gap: 1em;
     padding: 1em;
     margin: 1em 0;
@@ -49,14 +55,16 @@ button {
     transition-timing-function: ease-in-out;
 }
 
-.sneaker--card>div {
-    align-self: center;
-}
 
 .sneaker--card:hover {
-    transform: translate(0, -2px);
+    transform: translate(0, -3px);
     border: 1px solid var(--primary--color);
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
+
+.sneaker--card>div {
+    align-self: center;
 }
 
 .sneaker--thumb {
@@ -89,6 +97,7 @@ button {
 
 .modal--content {
     background-color: white;
+    border: 1px solid var(--primary--color);
     width: 80%;
     max-width: 700px;
     position: absolute;
@@ -106,8 +115,4 @@ button {
 
 .image--wrapper>img {
     width: 100%;
-}
-
-.hidden {
-    display: none;
 }
