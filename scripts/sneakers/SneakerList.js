@@ -6,7 +6,6 @@
 
 import { getSneakers, useSneakers } from './SneakerProvider.js'
 import { SneakerHTML} from './Sneaker.js'
-import './SneakerModal.js' //  Importing here instead of main.js
 
 const eventHub = document.querySelector(".main__container")
 const contentTarget = document.getElementById("sneaker__container")

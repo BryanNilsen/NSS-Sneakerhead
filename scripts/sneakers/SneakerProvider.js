@@ -15,6 +15,7 @@ export const getSneakers = () => {
     .then(response => response.json())
     .then(parsedData =>{
         sneakers = parsedData.results
+        console.log('sneakers: ', sneakers);
     })
 }
 
