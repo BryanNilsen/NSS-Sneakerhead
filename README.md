@@ -15,14 +15,8 @@ Simple app demonstrating the following fundamental javascript concepts:
 
 ## Visualizations
 
-### HTML Structure - Wireframe
-
 ![wireframe](./images/wireframe.png)
 
-
-### Event Hub Diagram
 ![events](./images/events.png)
 
-
-### Component Dependencies
 ![dependencies](./images/dependencies.png)
