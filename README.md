@@ -13,8 +13,11 @@ Simple app demonstrating the following fundamental javascript concepts:
 - CSS variables
 
 
-## Visualizations
 
+### Browser Preview
+![wireframe](./images/sneakerhead-screenshot.png)
+
+## Visualizations
 ![wireframe](./images/wireframe.png)
 
 ![events](./images/events.png)
