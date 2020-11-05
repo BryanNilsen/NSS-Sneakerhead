@@ -43,24 +43,19 @@ eventHub.addEventListener("sneakersSorted", event => {
         const sortedSneakers = useSneakers().sort((a,b) => a.retailPrice - b.retailPrice)
         render(sortedSneakers)
     }
+    // SORTING ALPHABETICALLY EXAMPLE
+    if (event.detail.sortMethod === "name--a-z") {
+        const sortedSneakers = useSneakers().map(sneaker => {
+            sneaker.shoe.replace("adidas", "")
+            return sneaker
+        }).sort((a,b) => a.shoe.localeCompare(b.shoe))
+        render(sortedSneakers)
+    }
+    if (event.detail.sortMethod === "name--z-a") {
+        const sortedSneakers = useSneakers().map(sneaker => {
+            sneaker.shoe.replace("adidas", "")
+            return sneaker
+        }).sort((a,b) => b.shoe.localeCompare(a.shoe))
+        render(sortedSneakers)
+    }
 })
-
-
-
-
-
-// SORTING ALPHABETICALLY EXAMPLE
-// if (event.detail.sortMethod === "name--a-z") {
-//     const sortedSneakers = useSneakers().map(sneaker => {
-//         sneaker.shoe.replace("adidas", "")
-//         return sneaker
-//     }).sort((a,b) => a.shoe.localeCompare(b.shoe))
-//     render(sortedSneakers)
-// }
-// if (event.detail.sortMethod === "name--z-a") {
-//     const sortedSneakers = useSneakers().map(sneaker => {
-//         sneaker.shoe.replace("adidas", "")
-//         return sneaker
-//     }).sort((a,b) => b.shoe.localeCompare(a.shoe))
-//     render(sortedSneakers)
-// }
