@@ -8,6 +8,7 @@ import './SneakerModal.js' //  Why import here instead of main.js?? pros/cons??
 
 const eventHub = document.querySelector(".main__container")
 
+// take sneaker object as argument and return HTML string representing specific sneaker info in card format
 export const SneakerHTML = (sneakerObj) => {
     return `
     <div id="sneakerId--${sneakerObj.id}" class="sneaker--card">
@@ -23,15 +24,15 @@ export const SneakerHTML = (sneakerObj) => {
 // EVENT LISTENER FOR THUMBNAIL IMAGE CLICK EVENT AND DISPATCH "sneakerCardClicked" CUSTOM EVENT
 // >> MODAL COMPONENT WILL LISTEN FOR THIS EVENT
 eventHub.addEventListener("click", (event) => {
-    if(event.target.parentElement.id.includes("sneakerId")) {
-        // get sneakerID from target
+    // check click event to see if target was the image by looking at the class
+    if(event.target.classList.contains("sneaker--thumb")){
+        // get sneakerID from target's parent element
         const [prefix, sneakerId] = event.target.parentElement.id.split("--")
         const sneakerCardClickedEvent = new CustomEvent("sneakerCardClicked", {
             detail: {
                 sneakerId: sneakerId
             }
         })
-        console.log('sneakerCardClickedEvent: ', sneakerCardClickedEvent);
         eventHub.dispatchEvent(sneakerCardClickedEvent)
     }
 })

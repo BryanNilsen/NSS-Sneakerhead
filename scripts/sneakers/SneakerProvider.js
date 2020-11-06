@@ -10,6 +10,7 @@
 let sneakers = [];
 
 // GET SNEAKERS FROM API
+// query string parameters: limit 100 results, brand = adidas
 export const getSneakers = () => {
     return fetch("https://api.thesneakerdatabase.com/v1/sneakers?limit=100&brand=adidas")
     .then(response => response.json())

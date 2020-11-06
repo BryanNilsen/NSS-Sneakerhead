@@ -10,19 +10,20 @@ const eventHub = document.querySelector(".main__container")
 const modalContainer = document.querySelector("#modal__container")
 
 
-// LISTEN FOR "sneakerCardClicked" EVENT AND REACT BY OPENING MODAL
+// LISTEN FOR "sneakerCardClicked" EVENT, FIND SNEAKER BY ID, AND REACT BY OPENING MODAL WITH THAT CURRENT SNEAKER
 eventHub.addEventListener("sneakerCardClicked", event => {
     const sneakerId = event.detail.sneakerId
     const currentSneaker = useSneakers().find(sneaker => sneaker.id === sneakerId)
     openSneakerModal(currentSneaker)
 })
 
-// FUNCTION TO OPEN SNEAKER MODAL (TAKES IMAGE URL AS ARGUMENT)
+// FUNCTION TO OPEN SNEAKER MODAL (TAKES SNEAKER OBJECT AS ARGUMENT)
 const openSneakerModal = (sneakerObj) => {
     modalContainer.innerHTML += `
     <div id="sneaker__modal" class="modal--parent">
         <div class="modal--content">
             <div class="image--wrapper"><img src="${sneakerObj.media.imageUrl}"/></div>
+            <h1>${sneakerObj.shoe}</h1>
             <button id="modal--close">close</button>
         </div>
     </div>

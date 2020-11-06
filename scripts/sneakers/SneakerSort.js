@@ -7,8 +7,8 @@
 const eventHub = document.querySelector(".main__container")
 const contentTarget = document.getElementById("list--modifiers__container")
 
+// CREATE SORT SELECT MENU HTML AND RENDER TO DOM
 export const SneakerSort = () => {
-    // CREATE SORT SELECT MENU HTML AND RENDER TO DOM
     const sortSelectHTML = `
     <select id="sort--sneaker">
         <option value="0">Sort Results</option>
@@ -21,7 +21,7 @@ export const SneakerSort = () => {
         contentTarget.innerHTML += sortSelectHTML
     }
 
-    // ADD EVENT LISTENER FOR CHANGE EVENT AND SET THE SORT TYPE IN DETAIL
+    // ADD EVENT LISTENER FOR CHANGE EVENT AND SET THE SELECTED SORT METHOD IN DETAIL
     eventHub.addEventListener("change", event => {
         if (event.target.id === "sort--sneaker") {
             const customSortEvent = new CustomEvent("sneakersSorted", {

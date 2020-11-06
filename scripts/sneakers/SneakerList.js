@@ -10,7 +10,7 @@ import { SneakerHTML} from './Sneaker.js'
 const eventHub = document.querySelector(".main__container")
 const contentTarget = document.getElementById("sneaker__container")
 
-// GET ALL SNEAKERS AND RENDER TO DOM
+// GET ALL SNEAKERS AND CALL RENDER FUNCTION
 export const SneakerList = () => {
     getSneakers().then(() => {
         const sneakersArray = useSneakers()
@@ -22,13 +22,13 @@ export const SneakerList = () => {
 // ITERATE SNEAKER ARRAY, MAKE HTML REPRESENTATION, AND RENDER TO DOM
 const render = (sneakerArray) => {
     const sneakersHTML = sneakerArray.map(sneaker => {
-        // can this be shortened??
+        // can this be shortened syntactically??
         return SneakerHTML(sneaker)
     }).join("")
     contentTarget.innerHTML = sneakersHTML
 }
 
-// EVENT LISTENER TO REACT TO "sneakerSorted" EVENT, SORT SNEAKER ARRAY, AND RENDER TO DOM
+// EVENT LISTENER TO REACT TO "sneakerSorted" EVENT, SORT SNEAKER ARRAY BASED ON SELECTION, AND RENDER TO DOM
 eventHub.addEventListener("sneakersSorted", event => {
     if (event.detail.sortMethod === "0") {
         const sortedSneakers = useSneakers()
@@ -42,7 +42,7 @@ eventHub.addEventListener("sneakersSorted", event => {
         const sortedSneakers = useSneakers().sort((a,b) => a.retailPrice - b.retailPrice)
         render(sortedSneakers)
     }
-    // SORTING ALPHABETICALLY EXAMPLE
+    // SORTING ALPHABETICALLY EXAMPLE -- what's going on here with replace? why?
     if (event.detail.sortMethod === "name--a-z") {
         const sortedSneakers = useSneakers().map(sneaker => {
             sneaker.shoe.replace("adidas", "")

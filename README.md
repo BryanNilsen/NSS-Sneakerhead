@@ -11,11 +11,12 @@ Simple app demonstrating the following fundamental javascript concepts:
 - rendering HTML to DOM
 - simple modal/popup functionality
 - CSS variables
+- importing Google Fonts
 
 
 
 ### Browser Preview
-![wireframe](./images/sneakerhead-screenshot.png)
+![wireframe](./images/shoegazer-screenshot.png)
 
 ## Visualizations
 ![wireframe](./images/wireframe.png)
