@@ -3,7 +3,7 @@
 Simple app demonstrating the following fundamental javascript concepts:
 
 - ES6 modules - import/export
-- fetching data from an API
+- fetching data from an API - [The Sneaker Database API](https://app.swaggerhub.com/apis-docs/tg4solutions/the-sneaker-database/1.0.0#/)
 - event listeners
 - dispatching custom events with data
 - sorting array data
